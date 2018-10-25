@@ -18,6 +18,6 @@ class ofApp : public ofBaseApp{
 		//void keyPressed(int key);
     
        vector<Bird> birds;
-        //Bird birds;
+       // Bird birds;
 		  
 };

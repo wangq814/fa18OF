@@ -1,14 +1,8 @@
-//
-//  Bird.cpp
-//  week08_steeringForce
-//
-//  Created by Qinglin Wang on 10/23/18.
-//
-
 #include "Bird.hpp"
 
 void Bird::setup(){
     loc.set(ofRandomWidth(),ofRandomHeight());
+    //loc.set(300,300);
     vel.set(0,0);
     acc.set(0,0);
     
@@ -22,23 +16,17 @@ void Bird::setup(){
 void Bird::update(){
     vel += acc;
     loc += vel;
+    
     acc *= 0;
 }
 
 
 void Bird::draw(){
-    float angle = atan2(vel.y,vel.x);
-    float heading = ofRadToDeg(angle);
-    
+
     ofSetColor(255,0,0);
     ofFill();
-    
-    
-    ofPushMatrix();
-    ofTranslate(loc.x,loc.y);
-    ofRotateZDeg(heading);
-    ofDrawTriangle(0, -r*2, -r, r*2, r, r*2);
-    ofPopMatrix();
+    ofDrawCircle(loc.x, loc.y, 10);
+
 }
 
 //--------------------------------------------------------------

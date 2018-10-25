@@ -1,9 +1,3 @@
-//
-//  Bird.hpp
-//  week08_steeringForce
-//
-//  Created by Qinglin Wang on 10/23/18.
-//
 
 #ifndef Bird_hpp
 #define Bird_hpp

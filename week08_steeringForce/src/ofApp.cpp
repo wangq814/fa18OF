@@ -7,26 +7,28 @@ void ofApp::setup(){
    ofSetCircleResolution(50);
 
     
-    for(int i = 0; i< TOTALNUM; i++){
+   for(int i = 0; i< TOTALNUM; i++){
         Bird b;
         b.setup();
         birds.push_back(b);
-    }
+   }
     
     
-    
+     //birds.setup();
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
     for(int i = 0; i< TOTALNUM; i++){
-      
+        birds[i].draw();
+    
         birds[i].steeringArriveForce(ofPoint(mouseX,mouseY));
-//        birds[i].steeringForce(ofPoint(mouseX,mouseY));
-//
+        //birds.steeringForce(ofPoint(mouseX,mouseY));
         
-    birds[i].update();
+        
+        birds[i].update();
         
     }
 }
@@ -35,9 +37,10 @@ void ofApp::update(){
 void ofApp::draw(){
     for(int i = 0; i< TOTALNUM; i++){
         birds[i].draw();
-       
-        
     }
+    
+       // birds.draw();
+    
 }
 
 //--------------------------------------------------------------
