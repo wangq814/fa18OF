@@ -49,19 +49,18 @@ void Bird::applyForce(ofPoint f){
 
 //--------------------------------------------------------------
 void Bird::steeringForce(ofPoint target){
-    //calculate steering force
+ 
     ofPoint steer;
     
     ofPoint desired = target - loc;
-    desired.normalize(); //get the direction
-    //the fastest speed of the vehicle
+    desired.normalize();
     desired *= maxSpeed;
     
     steer = desired - vel;
     
     steer.limit(maxForce);
     
-    //apply the force
+
     applyForce(steer);
 }
 
@@ -70,11 +69,10 @@ void Bird::steeringArriveForce(ofPoint target){
     
     ofPoint desired = target - loc;
     
-    //distance between current location and target
+    
     float dist = desired.length();
     desired.normalize();
-    
-    //parking zone radius: 100
+   
     if(dist < 100){
         float m = ofMap(dist, 0, 100, 0, maxSpeed);
         desired *= m;
